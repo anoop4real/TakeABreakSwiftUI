@@ -11,7 +11,7 @@ import SwiftUI
 struct BreakMainView: View {
     @ObservedObject var dataStore = TakeABreakDataStore.shared()
     @State private var breakText = ""
-    @State private var showReminderText = false
+    @State private var showReminderTextField = false
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -27,15 +27,21 @@ struct BreakMainView: View {
                 }
                 .pickerStyle(PopUpButtonPickerStyle())
                 .frame(width: 150)
+                Text("mins")
             }
             HStack {
-                Button(self.showReminderText ? "Done" : "Set Text", action: {
-                    self.showReminderText.toggle()
+                Button(self.showReminderTextField ? "Done" : "Set Text", action: {
+                    // Done tapped
+                    if (self.showReminderTextField && !self.breakText.isEmpty) {
+                        // Save to user defaults
+                        self.dataStore.storeTextToUserDefaults(text: self.breakText)
+                    }
+                    self.showReminderTextField.toggle()
                 }).buttonStyle(CapsuleStyle())
-                if self.showReminderText {
+                if self.showReminderTextField {
                     TextField(self.dataStore.getDisplayStringfromDefaults(), text: $breakText, onEditingChanged: { _ in
                     }) {
-                        // Save to user defaults
+                        // Save to user defaults on tapping enter on the text field
                         self.dataStore.storeTextToUserDefaults(text: self.breakText)
                     }
                     .textFieldStyle(RoundedBorderTextFieldStyle())

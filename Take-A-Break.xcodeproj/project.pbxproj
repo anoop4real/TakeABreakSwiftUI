@@ -46,6 +46,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		76BFFAC224E3EFE0008077F4 /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				76DC614924C8838300B84476 /* SoundPlayer.swift */,
+			);
+			path = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		76BFFAC324E3EFF3008077F4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				76BFFAC024E2C50F008077F4 /* ButtonStyles.swift */,
+				76DA631624A8A85B00262274 /* BreakMainView.swift */,
+				76DA630524A8A48A00262274 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		76DA62F724A8A48A00262274 = {
 			isa = PBXGroup;
 			children = (
@@ -65,13 +83,11 @@
 		76DA630224A8A48A00262274 /* Take-A-Break */ = {
 			isa = PBXGroup;
 			children = (
+				76BFFAC324E3EFF3008077F4 /* Views */,
+				76BFFAC224E3EFE0008077F4 /* AudioPlayer */,
 				76DC614B24C883CC00B84476 /* Resources */,
-				76DC614924C8838300B84476 /* SoundPlayer.swift */,
 				76DA631824A8E36700262274 /* DataStore */,
 				76DA630324A8A48A00262274 /* AppDelegate.swift */,
-				76BFFAC024E2C50F008077F4 /* ButtonStyles.swift */,
-				76DA631624A8A85B00262274 /* BreakMainView.swift */,
-				76DA630524A8A48A00262274 /* ContentView.swift */,
 				76DA630724A8A48B00262274 /* Assets.xcassets */,
 				76DA630C24A8A48B00262274 /* Main.storyboard */,
 				76DA630F24A8A48B00262274 /* Info.plist */,

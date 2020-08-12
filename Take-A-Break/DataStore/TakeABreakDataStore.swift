@@ -10,7 +10,7 @@ import Foundation
 
 class TakeABreakDataStore: ObservableObject {
     private static let _shared = TakeABreakDataStore()
-    private let multiplier = 60
+    private let multiplier = 1
     private var currTimer: Timer?
     private var maxTimerCount: Int = 0
     private let timeIntervals = ["20", "40", "60"]
@@ -39,10 +39,6 @@ class TakeABreakDataStore: ObservableObject {
         }
     }
     
-    func getIntervals() -> [String] {
-        return timeIntervals
-    }
-    
     func intervalAt(index: Int) -> String {
         return timeIntervals[index]
     }
@@ -59,13 +55,13 @@ class TakeABreakDataStore: ObservableObject {
     
     func storeTextToUserDefaults(text: String) {
         let pref = UserDefaults.standard
-        pref.set(text, forKey: "dispString")
+        pref.set(text, forKey: "dispString1")
     }
     
     func getDisplayStringfromDefaults() -> String {
         let pref = UserDefaults.standard
         var savedString = ""
-        if let dataStr = pref.object(forKey: "dispString") as? String {
+        if let dataStr = pref.object(forKey: "dispString1") as? String {
             savedString = dataStr
         }
         return savedString
