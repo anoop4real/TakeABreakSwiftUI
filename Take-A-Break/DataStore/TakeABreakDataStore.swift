@@ -10,7 +10,7 @@ import Foundation
 
 class TakeABreakDataStore: ObservableObject {
     private static let _shared = TakeABreakDataStore()
-    private let multiplier = 1
+    private let multiplier = 60
     private var currTimer: Timer?
     private var maxTimerCount: Int = 0
     private let timeIntervals = ["20", "40", "60"]
